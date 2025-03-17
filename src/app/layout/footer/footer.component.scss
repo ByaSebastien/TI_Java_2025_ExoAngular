@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    background-color: lightgrey;
+    padding: 10px;
+    text-align: center;
+  }
+}
