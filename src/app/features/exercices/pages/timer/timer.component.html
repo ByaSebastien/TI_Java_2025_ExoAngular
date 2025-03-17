@@ -1,1 +1,4 @@
-<p>timer works!</p>
+<h2>{{secondes | time}}</h2>
+<button class="custom-button" (click)="start()" [disabled]="timer">Start</button>
+<button class="custom-button" (click)="stop()" [disabled]="!timer">Stop</button>
+<button class="custom-button" (click)="reset()" [disabled]="secondes === 0">Reset</button>

@@ -1,25 +1,37 @@
 import { Component } from '@angular/core';
+import {TimePipe} from '../../../../shared/pipes/time.pipe';
 
 @Component({
-  selector: 'app-timer',
-  imports: [],
+  imports: [
+    TimePipe
+  ],
   templateUrl: './timer.component.html',
   styleUrl: './timer.component.scss'
 })
 export class TimerComponent {
 
-  count = 0;
+  secondes: number = 0;
   timer: any;
 
-  constructor() {
-
-    this.timer = setInterval(() => {
-      console.log(this.count++);
-    },200)
-
+  start(): void {
+    if(this.timer) {
+      return;
+    }
+    this.timer = setInterval(() => this.secondes++, 100);
   }
 
-  truc(){
+  stop(): void {
+    if(!this.timer) {
+      return;
+    }
     clearInterval(this.timer);
+    this.timer = null;
+  }
+
+  reset(): void {
+    if(this.secondes === 0){
+      return;
+    }
+    this.secondes = 0;
   }
 }
