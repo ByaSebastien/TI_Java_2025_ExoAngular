@@ -1,0 +1,19 @@
+<h2>Todo list</h2>
+<input type="text" [(ngModel)]="sectionTitle" placeholder="New section">
+<button (click)="addSection()">Ajouter</button>
+@for (section of todoList; track section.id) {
+  <h3 (click)="toggleIsOpen(section.id)">{{ section.title }}</h3>
+  @if (section.isOpen) {
+    <input type="text" [(ngModel)]="taskTitle" placeholder="New task">
+    <button (click)="addTask(section.id)">Ajouter</button>
+    <ul>
+      @for (task of section.tasks; track task.id) {
+        <li class="task-item" [ngClass]="{green: task.isCompleted, red: !task.isCompleted}">
+          <p>{{task.title}}</p>
+          <button class="custom-button" (click)="toggleCompleted(section.id,task.id)">{{task.isCompleted ? '⛔' : '✅'}}</button>
+          <button (click)="removeTask(section.id, task.id)">❌</button>
+        </li>
+      }
+    </ul>
+  }
+}
