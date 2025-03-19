@@ -11,4 +11,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/exercices/pages/todo-list/todo-list.component').then(m => m.TodoListComponent),
   },
+  {
+    path: 'shopping-list',
+    loadComponent: () =>
+      import('./features/exercices/pages/shopping-list/shopping-list.component').then(m => m.ShoppingListComponent),
+  },
 ];

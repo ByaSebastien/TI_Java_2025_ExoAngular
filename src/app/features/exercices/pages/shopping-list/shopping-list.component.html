@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)]="itemName" placeholder="Item name">
+<input type="number" [(ngModel)]="itemQuantity" placeholder="Item quantity">
+<button class="custom-button" (click)="addItem()">Add</button>
+<app-s-list [items]="items" (buttonEvent)="reactToButtonEvent($event)"></app-s-list>

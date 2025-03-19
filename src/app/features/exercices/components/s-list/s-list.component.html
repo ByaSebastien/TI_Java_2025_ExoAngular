@@ -1,0 +1,26 @@
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (item of items;track item.name) {
+      <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>
+          <button class="custom-button" (click)="emitDeleteEvent({item:item, dataType:ButtonEventDataType.MINUS})">➖</button>
+          <button class="custom-button" (click)="emitDeleteEvent({item:item, dataType:ButtonEventDataType.PLUS})">➕</button>
+          <button class="custom-button" (click)="emitDeleteEvent({item:item, dataType:ButtonEventDataType.DELETE})">❌</button>
+        </td>
+      </tr>
+    } @empty {
+      <tr>
+        <p>Empty</p>
+      </tr>
+    }
+  </tbody>
+</table>
