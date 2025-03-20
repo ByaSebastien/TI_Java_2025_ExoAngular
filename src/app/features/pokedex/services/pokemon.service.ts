@@ -38,6 +38,16 @@ export class PokemonService {
   }
 
   findOne(url: string) {
-    return this._http.get<PokemonDetailsModel>(url);
+    return this._http.get<PokemonDetailsModel>(url).pipe(
+      map((result: any) : PokemonDetailsModel => {
+        return {
+          name: result.name,
+          height: result.height,
+          weight: result.weight,
+          picture: result.sprites.other.dream_world.front_default,
+          types: result.types.map((t: any) => t.type.name),
+        };
+      })
+    );
   }
 }

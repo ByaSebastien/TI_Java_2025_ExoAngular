@@ -1,13 +1,13 @@
 <div class="left">
   @if (pokemonDetails) {
     <h2>Nom : {{ pokemonDetails.name }}</h2>
-    <img [src]="pokemonDetails.sprites.other.dream_world.front_default">
+    <img [src]="pokemonDetails.picture">
     <p>Taille : {{ pokemonDetails.height / 10 }} m</p>
     <p>Poids : {{ pokemonDetails.weight / 10 }} kg</p>
     <p>Type(s)</p>
     <ul>
-      @for (t of pokemonDetails.types; track t.type.name) {
-        <li>{{ t.type.name }}</li>
+      @for (t of pokemonDetails.types; track t) {
+        <li>{{ t }}</li>
       }
     </ul>
   } @else {

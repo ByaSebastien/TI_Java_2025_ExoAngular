@@ -35,6 +35,7 @@ export class PokeIndexComponent {
     this._pokemonService.findOne(url).subscribe({
       next: (result: PokemonDetailsModel) => {
         this.pokemonDetails = result;
+        console.log(this.pokemonDetails);
       }
     })
   }
