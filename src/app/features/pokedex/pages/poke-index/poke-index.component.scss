@@ -1,0 +1,53 @@
+:host {
+  display: flex;
+  width: 80%;
+  margin: auto;
+
+  .left {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    img {
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    ul {
+      list-style: none;
+    }
+  }
+
+  .right {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .buttons {
+      display: flex;
+
+      button {
+        width: 50%;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      list-style: none;
+
+      .poke-item {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        img {
+          height: 50px;
+        }
+      }
+    }
+  }
+}

@@ -16,4 +16,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/exercices/pages/shopping-list/shopping-list.component').then(m => m.ShoppingListComponent),
   },
+  {
+    path: 'pokedex',
+    loadComponent: () =>
+      import('./features/pokedex/pages/poke-index/poke-index.component').then(m => m.PokeIndexComponent),
+  },
 ];
